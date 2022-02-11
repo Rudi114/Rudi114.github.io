@@ -1,0 +1,309 @@
+/* Copyright 2013 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  /*dark mode*/
+  /* background-color: black; */
+}
+
+.icon {
+  -webkit-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.icon-offline {
+  content: -webkit-image-set( url(assets/default_100_percent/100-error-offline.png) 1x, url(assets/default_200_percent/200-error-offline.png) 2x);
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Offline page */
+
+.offline .interstitial-wrapper {
+  color: #2b2b2b;
+  font-size: 1em;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 100px;
+  width: 100%;
+}
+
+.offline .runner-container {
+  height: 150px;
+  max-width: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 35px;
+  width: 44px;
+}
+
+.offline .runner-canvas {
+  height: 150px;
+  max-width: 600px;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.offline .controller {
+  background: rgba(247, 247, 247, .1);
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.cryptodino-actions {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+}
+
+.cryptodino-action-button {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 7.25rem;
+  height: 2rem;
+}
+
+.cryptodino-action-button-icon {
+  object-fit: contain;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.cryptodino-action-button-text {
+  width: 100%;
+  font-family: "Press Start 2P";
+  font-size: 0.55rem;
+}
+
+.inventory-options {
+  font-family: "Press Start 2P";
+  font-size: 0.55rem;
+}
+
+.popup {
+  margin: 30px;
+  padding: 10px;
+  width: calc(100% - 84px);
+  /* height: 300px; */
+  overflow-y: scroll;
+  /* border: 1px solid red; */
+  border-width: 2px;
+  border-style: outset;
+  border-left-color:rgb(118, 118, 118);
+  border-top-color:rgb(118, 118, 118);
+  border-right-color: rgb(33, 33, 33);
+  border-bottom-color: rgb(33, 33, 33);
+  /* border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133)); */
+  border-image: initial;
+}
+
+.egg {
+ width: 100%;
+ height: 100%;
+}
+
+#hatch {
+ display: none;
+}
+
+#equip {
+  display: none;
+}
+
+#unequip {
+  display: none;
+}
+
+#incubate {
+  display: none;
+}
+
+#unincubate {
+  display: none;
+}
+
+.labl {
+  display : block;
+  /* width: 100%; */
+}
+.labl > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.labl > input + div{ /* DIV STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+  background-color: #727272;
+  border: 1px solid #494949;
+}
+
+.hatch-confirm {
+  border-width: 2px;
+  border-style: outset;
+  border-left-color:rgb(118, 118, 118);
+  border-top-color:rgb(118, 118, 118);
+  border-right-color: rgb(33, 33, 33);
+  border-bottom-color: rgb(33, 33, 33);
+  margin-left: 20px;
+  margin-top: 10px;
+  width: calc(7.25rem - 4px);
+}
+
+.menu-flex {
+  display: flex;
+}
+
+.vertical-flex {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hatch-confirm-buttons {
+  margin: 0px 10px 10px 10px;
+  width: calc(100% - 20px);
+}
+
+.action-buttons {
+  display: none;
+  flex-direction: column;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#progress {
+  width: 0%;
+  height: 8px;
+  background-color: green;
+}
+
+.inventory-options {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.inventory-slot {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background-color: white;
+  color: black;
+}
+
+.skin {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+
+.inventory-slot-set {
+  display: flex;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+#inventory {
+  display: none;
+}
+
+#info { 
+  display: none;
+}
+
+#offline-resources {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .suggested-left > #control-buttons, .suggested-right > #control-buttons {
+    float: none;
+  }
+  .snackbar {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media (max-height: 350px) {
+  h1 {
+    margin: 0 0 15px;
+  }
+  .icon-offline {
+    margin: 0 0 10px;
+  }
+  .interstitial-wrapper {
+    margin-top: 5%;
+  }
+  .nav-wrapper {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 736px) and (orientation: landscape) {
+  .offline .interstitial-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 736px) and (min-height: 240px) and (max-height: 420px) and (orientation:landscape) {
+  .interstitial-wrapper {
+    margin-bottom: 100px;
+  }
+}
+
+@media (min-height: 240px) and (orientation: landscape) {
+  .offline .interstitial-wrapper {
+    margin-bottom: 90px;
+  }
+  .icon-offline {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-height: 320px) and (orientation: landscape) {
+  .icon-offline {
+    margin-bottom: 0;
+  }
+  .offline .runner-container {
+    top: 10px;
+  }
+}
+
+@media (max-width: 240px) {
+  .interstitial-wrapper {
+    overflow: inherit;
+    padding: 0 8px;
+  }
+}
