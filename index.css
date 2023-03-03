@@ -103,11 +103,16 @@ html, body {
   display: block;
   width: fit-content;
   margin: auto;
+  text-align: center;
 }
 
 .resume {
-  display: block;
-  margin: auto;
+  position: absolute;
+  top: 105vh;
+  width: 64vw;
+  height: 90.3vw;
+  left: 18vw;
+  right: 18vw;
 }
 
 .cryptodino-action-button {
