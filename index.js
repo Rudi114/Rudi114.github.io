@@ -634,7 +634,7 @@
                 // Check for collisions.
                 // DEBUG MODE: pass in this.canvasCtx as 3rd arg
                 var collision = hasObstacles &&
-                    checkForCollision(this.horizon.obstacles[0], this.tRex, this.canvasCtx);
+                    checkForCollision(this.horizon.obstacles[0], this.tRex, null);
 
                 if (!collision) {
                     this.distanceRan += this.currentSpeed * deltaTime / this.msPerFrame;
@@ -901,6 +901,8 @@
 
             // Reset the time clock.
             this.time = getTimeStamp();
+
+            window.scrollTo(window.scrollX, window.scrollY + 800);
         },
 
         stop: function () {
